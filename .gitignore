@@ -1,0 +1,13 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# images
+public/images-adocao
+public/images-doacao
+public/images-conta
+
+# misc
+npm-debug.log*
+Comandos.txt
