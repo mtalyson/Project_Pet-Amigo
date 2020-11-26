@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="/css/style-doacao.css">
+
+<!-- Formulário de Adoção -->
+<div class="container-fluid">
+
+    <h2 class="titulo-cadastro">Cadastro para Doação do Pet</h2>
+
+    <form action="/doacao/pets" method="post" enctype="multipart/form-data">
+
+        <div class="form-group col-md-6">
+            <label for="NomePet">Nome do Pet</label>
+            <input name="nomePet" type="text" class="form-control" id="NomePet" required autofocus>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="RacaPet">Raça</label>
+            <input name="raca" type="text" class="form-control" id="RacaPet" required>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="CorPet">Cor</label>
+                <input name="cor" type="text" class="form-control" id="CorPet" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="CategoriaPet">Categoria</label>
+                <select name="categoria" id="CategoriaPet" class="form-control" required>
+                    <option value="" selected>Escolha a Categoria</option>
+                    {{#each categorias}}
+                    <option value="{{id}}">{{categorias}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="IdadePet">Idade</label>
+                <input name="idade" type="text" class="form-control" id="IdadePet" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="SexoPet">Sexo</label>
+                <select name="sexo" id="SexoPet" class="form-control" required>
+                    <option value="" selected>Escolha o Sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Fêmea">Fêmea</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="PesoPet">Peso</label>
+                <input name="peso" type="text" class="form-control" id="PesoPet" required>
+            </div>
+            <div class="form-group col-md-3">
+                <label for="TamanhoPet">Tamanho</label>
+                <select name="tamanho" id="TamanhoPet" class="form-control" required>
+                    <option value="" selected>Escolha o Tamanho</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Pequeno">Pequeno</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="CampoObservacao">Observações</label>
+            <textarea name="observacoes" class="form-control" id="CampoObservacao" rows="5" required></textarea>
+        </div>
+
+        <div class="form-group col-md-6">
+            <p class="legend-radio">O animal foi Vacinado?</p>
+            <label><input type="radio" name="opcaoVacinado" value="sim" class="radio-pointer" required> Sim</label>
+            <label><input type="radio" name="opcaoVacinado" value="nao" class="radio-pointer-nao" required> Não</label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <p class="legend-radio">O animal foi Castrado?</p>
+            <label><input type="radio" name="opcaoCastrado" value="sim" class="radio-pointer" required> Sim</label>
+            <label><input type="radio" name="opcaoCastrado" value="nao" class="radio-pointer-nao" required> Não</label>
+        </div>
+
+        <div class="form-group col-md-6">
+            <p>Selecione uma Foto do Pet para Enviar:</p>
+            <input name="fotoPet" type="file" required/>
+        </div>
+
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-danger btn-doacao">Fazer Doação</button>
+        </div>
+
+    </form>
+
+</div>

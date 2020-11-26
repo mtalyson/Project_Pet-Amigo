@@ -1,0 +1,181 @@
+<script src="/js/jquery-3.4.1.slim.min.js"></script>
+<link rel="stylesheet" href="./css/style.css">
+<script type="text/javascript" src="./js/adocao.js"></script>
+<script type="text/javascript" src="./js/Chart.js"></script>
+
+
+<!-- Animais Para Adoção -->
+<div class="container-fluid">
+
+  {{#if user.eAdmin}}
+
+  <h2 class="titulo"><strong>Modo Administrador</strong></h2>
+  <p class="titulo">Este é o modo restrito. Aqui você poderá acompanhar o desempenho da plataforma.</p>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Estatisticas de Adoção</h5>
+      <canvas id="lineChart" min-width="400" min-height="400"></canvas>
+      <script>
+        var ctxL = document.getElementById("lineChart").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+          type: 'line',
+          data: {
+            labels: ["Janeiro", "Março", "Maio", "Julho", "Agosto", "Outubro", "Dezembro"],
+            datasets: [{
+              label: "Pets Doados",
+              data: [65, 59, 80, 81, 56, 55, 40],
+              backgroundColor: [
+                'rgba(105, 0, 132, .2)',
+              ],
+              borderColor: [
+                'rgba(200, 99, 132, .7)',
+              ],
+              borderWidth: 2
+            },
+            {
+              label: "Pets Adotados",
+              data: [28, 48, 40, 19, 86, 27, 90],
+              backgroundColor: [
+                'rgba(0, 137, 132, .2)',
+              ],
+              borderColor: [
+                'rgba(0, 10, 130, .7)',
+              ],
+              borderWidth: 2
+            }
+            ]
+          },
+          options: {
+            responsive: true
+          }
+        });
+      </script>
+    </div>
+  </div>
+
+
+
+
+  {{else}}
+  <div class="dropdown">
+    <button class="btn btn-danger posicao-categoria dropdown-toggle" type="button" id="dropdownMenuButton"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="icon-filter_list"></span> Categorias
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a href="/?pag={{pagina}}&tipo=0" class="dropdown-item">Todos</a>
+      {{#each categoria}}
+      <a href="/?pag={{../pagina}}&tipo={{id}}" class="dropdown-item">{{categorias}}</a>
+      {{/each}}
+    </div>
+  </div>
+
+  {{#each pets}}
+  <div class="container-fluid">
+    <div class="card margin-postado">
+      <div class="row no-gutters">
+        <div class="col-auto">
+          <img src="/images-adocao/{{fotoPet}}" style="width: 350px; height: auto" class="img-fluid img-thumbnail"
+            alt="">
+        </div>
+        <div class="col">
+          <div class="card-block px-2">
+            <div class="card-body">
+              <h4 class="card-title">Nome: {{nomePet}}</h4>
+              <p class="card-text">{{observacoes}}</p>
+
+              <ul class="list-group list-group-horizontal-xl">
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
+                    {{idade}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
+                    {{sexo}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
+                    {{cor}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
+                    {{raca}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
+                    {{peso}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
+                    {{tamanho}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
+                    {{opcaoVacinado}}</strong></li>
+                <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
+                    {{opcaoCastrado}}</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
+        <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Disponível para
+            Adoação</strong></small>
+        <a onclick="adotaPet({{../user.id}},{{idUsuarioDoacao}},{{id}})" style="color: white;"
+          class="btn btn-danger">Adotar Pet</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+  {{/if}}
+
+  <div class="row col-xs-10 col-xs-offset-1">
+  <div class="center-block text-center margem-paginacao">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination" id="menuPagina">
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+  var length = 12;
+  var pagina = {{ pagina }};
+  if (pagina == 0) {
+    document.getElementById("menuPagina").innerHTML = '<li class="page-item disabled" ><a  class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+  } else {
+    document.getElementById("menuPagina").innerHTML = '<li class=page-item ><a  class="page-link" href="/?pag=' + (pagina - 1) + '&tipo=0" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>';
+  }
+  var nPaginas = ({{ resp }}-1);
+  var finAdic = 3;
+  for (inicio = (pagina - 2); inicio < pagina; inicio++) {
+    if (inicio < 0) {
+      finAdic++;
+    } else {
+      if (pagina == inicio) {
+        document.getElementById("menuPagina").innerHTML += '<li class="page-item active" ><a class="page-link" href="#">' + (inicio + 1) + '</a></li>';
+      } else {
+        document.getElementById("menuPagina").innerHTML += '<li class=page-item><a class="page-link" href="/?pag=' + inicio + '&tipo=0">' + (inicio + 1) + '</a></li>';
+      }
+    }
+  }
+
+  var fim = (Number(pagina) + Number(finAdic));
+
+  for (inicioFim = pagina; inicioFim < fim; inicioFim++) {
+
+    if (nPaginas < inicioFim) {
+      fim = -10;
+    } else {
+      if (pagina == inicioFim) {
+        document.getElementById("menuPagina").innerHTML += '<li class="page-item active" ><a  class="page-link" href="#">' + (inicioFim + 1) + '</a></li>';
+      } else {
+        document.getElementById("menuPagina").innerHTML += '<li class=page-item  ><a  class="page-link" href="/?pag=' + inicioFim + '&tipo=0">' + (inicioFim + 1) + '</a></li>';
+      }
+    }
+  }
+
+
+  if (pagina == nPaginas) {
+    document.getElementById("menuPagina").innerHTML += '<li  class="page-item disabled" ><a   class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+
+  } else {
+    document.getElementById("menuPagina").innerHTML += '<li class=page-item><a  class="page-link" href="/?pag=' + (pagina + 1) + '&tipo=0" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>';
+  }
+</script>
+
+  
+
+</div>
+

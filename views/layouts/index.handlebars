@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Início | PET + AMIGO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="./css/montserrat.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./fonts/icomoon/style.css">
+  <link rel="stylesheet" href="./css/owl.carousel.min.css">
+  <link rel="stylesheet" href="./css/aos.css">
+  <link rel="stylesheet" href="./css/style-index.css">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <!-- Barra Lateral Mobile -->
+  <div class="site-wrap">
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <!-- Barra Superior -->
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="site-logo mr-auto"><a href="inicio.html"><span class="icon-pets espaco-icone-pets"></span>PET
+              + AMIGO</a></div>
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#adote" class="nav-link">Adote</a></li>
+                <li><a href="#projeto" class="nav-link">Projeto</a></li>
+                <li><a href="#quem-somos" class="nav-link">Quem Somos</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Menu de Login Na Barra Superior -->
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle btn-login" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Login
+                  </button>
+                  {{#if error}}
+                    <div class="alert alert-danger">{{error}}</div>
+                  {{else}}
+                  {{/if}}
+                  <form action="/index/" method="POST" class="dropdown-menu p-4 login-form">
+                    <div class="form-group">
+                      <label for="exampleDropdownFormEmail2">Email</label>
+                      <input name="email" type="email" class="form-control" id="exampleDropdownFormEmail2"
+                        placeholder="email@exemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleDropdownFormPassword2">Senha</label>
+                      <input name="senha" type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                  </form>
+                </div>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span
+                class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <main>
+
+      <!-- Seção de Início -->
+      <div class="intro-section" id="inicio">
+
+        <div class="slide-1" style="background-image: url('./images-index/img-background.jpg');"
+          data-stellar-background-ratio="0.5">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <div class="row align-items-center">
+                  <div class="col-lg-6 mb-4">
+                    <h1 class="texto-inicio" data-aos="fade-up" data-aos-delay="100">Junte-se a Esta Causa</h1>
+                    <p class="mb-4 texto-inicio" data-aos="fade-up" data-aos-delay="200">Atualmente, centenas de
+                      milhares de animais são abanonados anualmente em nosso país. Cadastre-se agora e não deixe que
+                      isto aconteça! Adote um animal e faça ele feliz.</p>
+
+                  </div>
+
+                  <!-- Formulario de Cadastro -->
+                  <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                    <form action="/index/users" method="post" class="form-box">
+                      <h3 class="h4 text-black mb-4 texto-cadastro">Cadastrar</h3>
+                      <div class="form-group">
+                        <input name="nomeUsuario" type="nome" class="form-control" placeholder="Digite seu nome" minlength="3" required>
+                      </div>
+                      <div class="form-group">
+                        <input name="email" type="email" class="form-control" placeholder="email@exemplo.com" required>
+                      </div>
+                      <div class="form-group">
+                        <input id="password" name="password" type="password" class="form-control" minlength="6" placeholder="Digite uma senha" required>
+                      </div>
+                      <div class="form-group mb-4">
+                        <input id="confirm_password" type="password" class="form-control" minlength="6" placeholder="Confirme a senha" required>
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" class="btn btn-primary btn-pill"  value="Confirmar">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção de Adote -->
+      <div class="site-section courses-title" id="adote">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+              <h2 class="section-title">Adote um Amigo</h2>
+              <p class="subtitulo-adocao">De acordo com a Organização Mundial da Saúde (OMS), o Brasil já tem em média
+                mais de 30 milhões de animais abandonados por seus donos. Tire um animal da rua e contribua com esta
+                causa, adote um amigo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrossel de Imagens -->
+      <div class="site-section courses-entry-wrap" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+          <div class="row">
+            <div class="owl-carousel col-12 nonloop-block-14">
+
+              <!-- Pet 1 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_1.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 1 ano</div>
+                  <h3><a>Bob</a></h3>
+                  <p>As vacinas estão em dia, já está castrado. É um cachorro muito dócil.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4"></span>Sexo: Masculino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-mars"></span></div>
+                </div>
+              </div>
+
+              <!-- Pet 2 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_2.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 3 meses</div>
+                  <h3><a>Thor</a></h3>
+                  <p>É brincalhão e muito bagunceiro. Precisa ser castrado e vacinado.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4"></span>Sexo: Masculino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-mars"></span></div>
+                </div>
+              </div>
+
+              <!-- Pet 3 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_3.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 1 ano</div>
+                  <h3><a>Nina</a></h3>
+                  <p>É muito timida e introvertida, mas também muito carinhosa e companheira.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4">Sexo: Feminino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-venus"></span></div>
+                </div>
+              </div>
+
+              <!-- Pet 4 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_4.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 5 meses</div>
+                  <h3><a>Tony</a></h3>
+                  <p>Extrovertido, gosta de brinca e é muito carinhoso. Já foi castrado e vacinado.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4"></span>Sexo: Masculino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-mars"></span></div>
+                </div>
+              </div>
+
+              <!-- Pet 5 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_5.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 8 meses</div>
+                  <h3><a>Dinho</a></h3>
+                  <p>Um pouco desconfiado, mas muito fiel. As vacinas precisam ser renovadas.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4"></span>Sexo: Masculino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-mars"></span></div>
+                </div>
+              </div>
+
+              <!-- Pet 6 -->
+              <div class="course bg-white h-100 align-self-stretch">
+                <figure class="m-0">
+                  <a><img src="./images-index/pet_6.jpg" alt="Image" class="img-pet"></a>
+                </figure>
+                <div class="course-inner-text py-4 px-4">
+                  <div class="meta"><span class="icon-clock-o"></span>Idade: 2 anos</div>
+                  <h3><a>Apolo</a></h3>
+                  <p>Muito carente e muito companheiro. Precisa ser vacinado.</p>
+                </div>
+                <div class="d-flex border-top stats">
+                  <div class="py-3 px-4"></span>Sexo: Masculino</div>
+                  <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-mars"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botões de Anterior e Próximo -->
+          <div class="row justify-content-center">
+            <div class="col-9 text-center">
+              <button class="customPrevBtn btn btn-primary m-1">Anterior</button>
+              <button class="customNextBtn btn btn-primary m-1">Próximo</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Seção de Projeto -->
+      <div class="site-section" id="projeto">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
+              <h2 class="section-title">Nosso Projeto</h2>
+              <p>Motivados por querer fazer a diferença no mundo, nós estudantes do Instituto Federal de Ciência e
+                Tecnologia do Maranhão, decidimos começar pelos seres vivos mais frágeis, os animais. Ajude você também
+                e faça parte dessa causa !!!</p>
+            </div>
+          </div>
+
+          <div class="row mb-5 align-items-center">
+            <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
+              <img src="./images-index/img-projeto.jpeg" alt="Image" class="img-fluid img-projeto">
+            </div>
+
+            <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+              <h2 class="text-black mb-4">Pensamos Grande</h2>
+              <p class="mb-4">O objetivo deste projeto é alcançar cada vez mais pessoas que desejam não só apenas adotar
+                um animalzinho ao invés de incentivar o mercado de venda de pets, mas também doar. Nossas Metas:</p>
+
+              <div class="d-flex align-items-center custom-icon-wrap mb-3">
+                <span class="custom-icon-inner mr-3"><span class="icon icon-pets"></span></span>
+                <div>
+                  <h3 class="m-0">1.000 Animais Adotados</h3>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center custom-icon-wrap">
+                <span class="custom-icon-inner mr-3"><span class="icon icon-pets"></span></span>
+                <div>
+                  <h3 class="m-0">50 Parceiros Comerciais e ONG's</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção de Quem Somos -->
+      <div class="site-section" id="quem-somos">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-lg-7 mb-5 text-center" data-aos="fade-up" data-aos-delay="">
+              <h2 class="section-title">Quem Somos</h2>
+              <p class="mb-5">Estudantes do Instituto Federal de Educação, Ciência e Tecnologia do Maranhão. Motivados
+                pela vontade de aprender e de construir um projeto com capacidade de mudar o mundo aos poucos.</p>
+            </div>
+          </div>
+
+          <!-- Programador 1 -->
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="teacher text-center">
+                <img src="./images-index/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                <div class="py-2">
+                  <h3 class="text-black">Talyson Moreira</h3>
+                  <p class="position">Programador</p>
+                  <p>Possui 24 anos e atualmente estuda no Instituto Federal do Maranhão.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Programador 2 -->
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="teacher text-center">
+                <img src="./images-index/person_2.jpeg" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                <div class="py-2">
+                  <h3 class="text-black">Luís André</h3>
+                  <p class="position">Programador</p>
+                  <p>Possui 22 anos e atualmente estuda no Instituto Federal do Maranhão.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Programador 3 -->
+            <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="teacher text-center">
+                <img src="./images-index/person_3.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                <div class="py-2">
+                  <h3 class="text-black">Marcello Diniz</h3>
+                  <p class="position">Programador</p>
+                  <p>Possui 21 anos e atualmente estuda no Instituto Federal do Maranhão.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer-section bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Sobre PET + AMIGO</h3>
+            <p>Somos um projeto não governamental e sem fins lucrativos, frutos de um projeto da disciplina de
+              Engenharia de Software, do Instituto Federal do Maranhão, sob a monitoria do Professor Daniel Lima Gomes
+              Júnior.</p>
+          </div>
+
+          <!-- Mapa do Site -->
+          <div class="col-md-3 ml-auto">
+            <h3>Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#adote">Adote</a></li>
+              <li><a href="#projeto">Projeto</a></li>
+              <li><a href="#quem-somos">Quem Somos</a></li>
+            </ul>
+          </div>
+
+          <!-- Subscrição -->
+          <div class="col-md-4">
+            <h3>Assine</h3>
+            <p>Insira seu email e fique atento às nossas novidades e atualizaçães. Receba também informações sobre
+              adoção de pets no Brasil.</p>
+            <form action="#" class="footer-subscribe">
+              <div class="d-flex mb-5">
+                <input type="email" class="form-control rounded-0" placeholder="Email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Confirmar">
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p>Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> | Todos os direitos reservados</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+</body>
+
+<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-3.0.1.min.js"></script>
+<script type="text/javascript" src="./js/popper.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="./js/jquery.stellar.min.js"></script>
+<script type="text/javascript" src="./js/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="./js/aos.js"></script>
+<script type="text/javascript" src="./js/jquery.sticky.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+
+</html>

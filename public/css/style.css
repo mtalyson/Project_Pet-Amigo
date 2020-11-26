@@ -1,0 +1,210 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.cor-navbar {
+    background: rgb(193,61,0);
+    background: linear-gradient(28deg, rgba(193,61,0,1) 0%, rgba(207,66,10,1) 35%, rgba(255,145,0,1) 100%);
+}
+
+.titulo-sidebar, #titulo-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.icon-pets{
+    color: white;
+    font-size: 1.50rem;
+}
+
+.botao-sidebar {
+    margin-left: 55px;
+    padding: 5px 20px;
+    background-color: transparent;
+    color: white;
+}
+
+#botao-pesquisa {
+    margin-right: 10px;
+}
+
+.item-barra {
+    color: black;
+    border: 0px solid rgba(0,0,0,.125);
+}
+  
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin .25s ease-out;
+}
+  
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+  
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+  
+#page-content-wrapper {
+    min-width: 100vw;
+}
+  
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+  
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+}
+  
+#page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+}
+  
+#wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+}
+
+#sidebar-borda-inferior {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-bottom: 19px;
+    margin-bottom: 5px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.border-right {
+    border-right: 0px solid #dee2e6!important;
+}
+
+.btn-outline-success{
+    color: orange;
+    font-weight: bold;
+    background: white;
+    border: white;
+    border-radius: 30px;
+}
+
+.titulo-sidebar, .titulo-brand {
+    font-weight: bold;
+}
+
+.page-link{
+    color: darkorange;
+    font-weight: bold;
+}
+
+.texto-card-margen-inferior{
+    margin-bottom: 40px;
+}
+
+.btn-lista{
+    background-color: orange;
+    border: orange;
+    border-radius: 30px;
+    padding: 10px 40px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.btn-lista:hover, .btn-lista:active, .btn-lista:focus{
+    background-color: darkorange;
+    border: darkorange;
+}
+
+.card-img{
+    min-width: 390px;
+    min-height: 260px;
+    max-width: 390px;
+    max-height: 260px;
+    width: auto;
+    height: auto;
+}
+
+.btn-categoria {
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 40px;
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-categoria:hover {
+    background-color: darkorange;
+    border-color: darkorange;
+    color: white;
+}
+
+.btn-categoria-item {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding: 10px 40px;
+    background-color: white;
+    border-color: darkorange;
+    color: darkorange;
+    font-weight: bold;
+}
+
+.btn-categoria-item:hover {
+    background-color: white;
+    border-color: darkorange;
+    color: darkorange;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.posicao-categoria {
+    margin-top: 20px !important;
+    margin-left: 15px !important;
+}
+
+.margin-postado{
+    margin-top: 10px;
+}
+
+.backgroud-botao-busca{
+    font-weight: bold;
+}
+
+.titulo{
+    margin: 20px 0px 20px 10px;
+}
+
+.btn-danger{
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-danger:not(:disabled):not(.disabled).active, 
+.btn-danger:not(:disabled):not(.disabled):active, 
+.show>.btn-danger.dropdown-toggle, .show>.btn-danger.dropdown-toggle, 
+.btn-danger:focus, .btn-danger:hover{
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.margem-paginacao{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.page-item.active .page-link {
+    background-color: darkorange;
+    border-color: darkorange;
+}

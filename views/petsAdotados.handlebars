@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="./css/style.css">
+
+<!-- Animais Para Adoção -->
+<div class="container-fluid">  
+
+    <h2 class="titulo">Lista dos Seus Pets Adotados</h2>
+
+    {{#each pets}}
+    
+    <div class="container-fluid">
+        <div class="card margin-postado">
+            <div class="row no-gutters">
+                <div class="col-auto">
+                    <img src="/images-adocao/{{pets.fotoPet}}" style="width: 350px; height: auto"
+                        class="img-fluid img-thumbnail" alt="">
+                </div>
+                <div class="col">
+                    <div class="card-block px-2">
+                        <div class="card-body">
+                            <h4 class="card-title">Nome: {{pets.nomePet}}</h4>
+                            <p class="card-text">{{pets.observacoes}}</p>
+
+                            <ul class="list-group list-group-horizontal-xl">
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
+                                        {{pets.idade}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
+                                        {{pets.sexo}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
+                                        {{pets.cor}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
+                                        {{pets.raca}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
+                                        {{pets.peso}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
+                                        {{pets.tamanho}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
+                                        {{pets.opcaoVacinado}}</strong></li>
+                                <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
+                                        {{pets.opcaoCastrado}}</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
+                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Adotado por Você</strong></small>
+                <a href="/petsadotados/cancelaadocao?idpet={{pets.id}}" class="btn btn-danger">Cancelar Adoção</a>
+            </div>
+        </div>
+    </div>
+
+    {{/each}}
+
+</div>
+</div>

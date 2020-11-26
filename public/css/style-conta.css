@@ -1,0 +1,237 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.titulo-sidebar, #titulo-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.icon-pets{
+    color: white;
+    font-size: 1.50rem;
+}
+
+.botao-sidebar {
+    margin-left: 55px;
+    padding: 5px 20px;
+}
+
+#botao-pesquisa {
+    margin-right: 10px;
+}
+
+.borda-item {
+    border: 1px solid rgba(0,0,0,.125);
+}
+  
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin .25s ease-out;
+}
+  
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+  
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+  
+#page-content-wrapper {
+    min-width: 100vw;
+}
+  
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+  
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+}
+  
+#page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+}
+  
+#wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+}
+
+#sidebar-borda-inferior {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-bottom: 19px;
+    margin-bottom: 5px;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.border-right {
+    border-right: 0px solid #dee2e6!important;
+}
+
+.btn-outline-success{
+    color: orange;
+    font-weight: bold;
+    background: white;
+    border: white;
+    border-radius: 30px;
+}
+
+.page-link{
+    color: darkorange;
+    font-weight: bold;
+}
+
+.texto-card-margen-inferior{
+    margin-bottom: 40px;
+}
+
+.btn-lista{
+    background-color: orange;
+    border: orange;
+    border-radius: 30px;
+    padding: 10px 40px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.btn-lista:hover, .btn-lista:active, .btn-lista:focus{
+    background-color: darkorange;
+    border: darkorange;
+}
+
+.card-img{
+    min-width: 390px;
+    min-height: 260px;
+    max-width: 390px;
+    max-height: 260px;
+    width: auto;
+    height: auto;
+}
+
+.btn-categoria {
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 40px;
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-categoria:hover {
+    background-color: darkorange;
+    border-color: darkorange;
+    color: white;
+}
+
+.btn-categoria-item {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding: 10px 40px;
+    background-color: white;
+    border-color: darkorange;
+    color: darkorange;
+    font-weight: bold;
+}
+
+.btn-categoria-item:hover {
+    background-color: white;
+    border-color: darkorange;
+    color: darkorange;
+}
+
+.btn-cadastro {
+    margin: 20px 0px 20px 26px;
+    width: 200px;
+    background-color: orange;
+    font-weight: bold;
+    border-color: orange;
+    border-radius: 30px;
+}
+
+.btn-cadastro:hover {
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
+.titulo-cadastro{
+    margin: 20px 0px;
+}
+
+.card{
+    max-width: 1000px;
+    border-radius: 30px;
+}
+
+.card-perfil {
+    max-width: 250px;
+    float: right;
+    margin-right: 900px;
+    margin-top: 195px;
+}
+
+.container-fluid {
+    padding-left: 25px;
+}
+
+.bloco-informacoes{
+    margin-top: 20px;
+}
+
+.foto-perfil {
+    float: left;
+    border: 2px dashed black;
+    border-radius: 30px;
+}
+
+#upload-foto{
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+section {
+    display: flow-root !important;
+}
+
+.input-email{
+    border-radius: 30px;
+    border-style: groove;
+    background: rgb(236, 234, 234);
+}
+
+a, a:hover {
+    color: darkorange;
+}
+
+.list-group-item.active {
+    background-color: darkorange !important; 
+    border-color: darkorange !important;
+}
+
+.badge-primary {
+    background-color: darkorange;
+}
+
+.margem-texto {
+    margin-top: 1rem;
+}
+
+.margem-menu {
+    margin-top: 3rem;
+}
+
+.list-group{
+    margin-bottom: 30px;
+}

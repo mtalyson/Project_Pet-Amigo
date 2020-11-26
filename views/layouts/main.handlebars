@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PET + AMIGO</title>
+
+  <link rel="stylesheet" href="/css/montserrat.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header>
+
+    <!-- Barra Superior -->
+    <nav class="cor-navbar navbar navbar-expand-lg">
+          <a class="navbar-brand" id="titulo-brand">Pet + Amigo <span class="icon-pets"></span></a>
+      <button class="btn botao-sidebar" id="menu-toggle"><span class="icon-bars"></span></button>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="d-flex" id="wrapper">
+
+      <!-- Barra Lateral -->
+      <div class="bg-light border-right" id="sidebar-wrapper">
+
+        <div class="list-group list-group-flush">
+          {{#if user.eAdmin}}
+          
+          {{else}}
+          <a href="/doacao" class="list-group-item item-barra list-group-item-action bg-light">
+          <span class="icon-plus-circle"></span> Doe um Pet</a>
+          <a href="/?pag=0&tipo=0" class="list-group-item item-barra list-group-item-action bg-light">
+          <span class="icon-minus-circle"></span> Adote um Pet</a>
+          <a href="/petsdoados" class="list-group-item item-barra list-group-item-action bg-light">
+          <span class="icon-tasks"></span> Seus Pets Doados</a>
+          <a href="/petsadotados" class="list-group-item item-barra list-group-item-action bg-light">
+          <span class="icon-tasks"></span> Seus Pets Adotados</a>
+          <a href="/conta" class="list-group-item item-barra list-group-item-action bg-light" id="sidebar-borda-inferior">
+          <span class="icon-id-card"></span> Minha Conta</a>
+
+          <a href="#" class="list-group-item item-barra list-group-item-action bg-light">Termos de Uso</a>
+          <a href="#" class="list-group-item item-barra list-group-item-action bg-light">Sobre</a>
+          {{/if}}
+          <a href="/logout" class="list-group-item item-barra list-group-item-action bg-light">
+          <span class="icon-exit_to_app"></span> Sair</a>
+        </div>
+      </div>
+
+      <div id="page-content-wrapper">
+        {{{body}}}
+      </div>
+
+  </main>
+</body>
+
+<script src="/js/jquery-3.4.1.slim.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<script>
+  $("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>
+
+</html>

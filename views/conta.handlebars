@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="./css/style-conta.css">
+
+<div class="container-fluid">
+    <div class="col-sm-10">
+        <h2 class="titulo-cadastro">Informações sobre a Conta</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            {{#usuarios}} 
+
+            <div class="text-center">
+                <img src="/images-conta/{{usuarios.fotoUsuario}}" class="img-fluid img-thumbnail"
+                    alt="avatar">
+            </div>
+            </hr><br>
+
+            <ul class="list-group">
+                <li class="list-group-item borda-item d-flex justify-content-between align-items-center active">
+                    Atividade
+                </li>
+                <li class="list-group-item borda-item d-flex justify-content-between align-items-center">
+                    <strong>Pets Doados</strong>
+                    <span class="badge badge-primary badge-pill">5</span>
+                </li>
+                <li class="list-group-item borda-item d-flex justify-content-between align-items-center">
+                    <strong>Pets Adotados</strong>
+                    <span class="badge badge-primary badge-pill">2</span>
+                </li>
+            </ul>
+        </div>
+        <!--/col-3-->
+        <div class="col-sm-9">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a data-toggle="tab" class="nav-link active">Perfil</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active">
+
+                    <form class="form" action="##" method="" id="registrationForm">
+
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="first_name">
+                                    <h4 class="margem-texto">Nome</h4>
+                                </label>
+                                <input type="text" class="form-control" name="name" id="name" value="{{usuarios.nomeUsuario}}"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email">
+                                    <h4>Email</h4>
+                                </label>
+                                <input type="email" class="form-control" name="email" id="email" value="{{usuarios.email}}"
+                                    disabled>
+                            </div>
+                        </div>
+
+                        
+                        <ul class="nav nav-tabs margem-menu">
+                            <li class="nav-item">
+                                <a data-toggle="tab" class="nav-link active">Endereço</a>
+                            </li>
+                        </ul>
+                        
+                         
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <label for="last_name">
+                                    <h4 class="margem-texto">Logradouro</h4>
+                                </label>
+                                <input type="text" class="form-control" value="{{logradouro}}" name="logradouro" id="logradouro"
+                                    placeholder="Avenida, Rua" title="Digite seu Logradouro." disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="casa">
+                                    <h5>Casa</h5>
+                                </label>
+                                <input type="text" class="form-control" id="casa" value="{{casa}}" name="casa" placeholder="Numero"
+                                    maxlength="2" disabled>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="quadra">
+                                    <h5>Quadra</h5>
+                                </label>
+                                <input type="text" class="form-control" id="quadra" value="{{quadra}}" name="quadra" placeholder="Ex. Quadra" disabled>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="bairro">
+                                    <h5>Bairro </h5>
+                                </label>
+                                <input type="text" class="form-control" id="bairro" value="{{bairro}}" name="bairro" placeholder="Ex. Bairro" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" value="{{cidade}}" name="cidade" placeholder="Ex. Cidade" disabled>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">Estado</label>
+                                <select id="inputState" class="form-control" disabled>
+                                    <option selected="" value="{{estado}}">{{estado}}</option>
+                                    <option value="Acre">Acre</option>
+                                    <option value="Alagoas">Alagoas</option>
+                                    <option value="Amapá">Amapá</option>
+                                    <option value="Amazonas">Amazonas</option>
+                                    <option value="Bahia">Bahia</option>
+                                    <option value="Ceará">Ceará</option>
+                                    <option value="Distrito Federal">Distrito Federal</option>
+                                    <option value="Espírito Santo">Espírito Santo</option>
+                                    <option value="Goiás">Goiás</option>
+                                    <option value="Maranhão">Maranhão</option>
+                                    <option value="Mato Grosso">Mato Grosso</option>
+                                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                    <option value="Minas Gerais">Minas Gerais</option>
+                                    <option value="Pará">Pará</option>
+                                    <option value="Paraíba">Paraíba</option>
+                                    <option value="Paraná">Paraná</option>
+                                    <option value="Pernambuco">Pernambuco</option>
+                                    <option value="Piauí">Piauí</option>
+                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                    <option value="Rondônia">Rondônia</option>
+                                    <option value="Roraima">Roraima</option>
+                                    <option value="Santa Catarina">Santa Catarina</option>
+                                    <option value="São Paulo">São Paulo</option>
+                                    <option value="Sergipe">Sergipe</option>
+                                    <option value="Tocantins">Tocantins</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="cep">CEP</label>
+                                <input type="text" class="form-control" id="cep" value="{{cep}}" name="cep" placeholder="Ex. XX.XXX-XXX"
+                                    maxlength="10" disabled>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <br>
+                                <a href="/conta/editconta/{{id}}" class="btn btn-lg btn-success">
+                                    <span class="icon-edit"></span> Editar Dados</a>
+                            </div>
+                        </div>
+                    </form>
+
+                    {{/usuarios}}
+
+                </div>
+                <!--/tab-pane-->
+            </div>
+        </div>
+    </div>
+</div>
