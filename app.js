@@ -58,5 +58,5 @@ app.use('/petsdoados', petsdoados);
 app.use('/petsadotados', petsadotados);
 
 app.listen(3000,function(){
-    console.log("Servidor esta funcionando")
+    console.log("Servidor esta funcionando na URL: http://localhost:3000")
 })  

@@ -25,6 +25,8 @@ router.get("/editconta/:id",autenticado, async (req,res)=>{
 
 router.post("/atualizaconta",autenticado,upload.single('fotoUsuario'),usersControllers.update);
 
+router.post("/atualizaImagem",autenticado,upload.single('fotoUsuario'),usersControllers.updateImage);
+
 router.post('/users',autenticado,usersControllers.store);
 
 module.exports = router;

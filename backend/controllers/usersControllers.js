@@ -38,17 +38,6 @@ module.exports = {
             id, nomeUsuario, email,logradouro, casa, quadra, bairro, cidade, estado, cep,
         } = req.body; 
 
-        //Testado para ver se o usuario enviou ou não foto
-
-        let img = "";
-        if(req.file == null){
-            let imgBanco = await usuarios.findByPk(id);
-            img = imgBanco.fotoUsuario  
-        }
-        else{
-            img = req.file.filename
-        }
-        
         //Recebendo senha do usuario e verificando se deve ou não atualizar senha
         let {
             password
@@ -58,7 +47,6 @@ module.exports = {
             let atualizaUsuario = await usuarios.update ({
                 nomeUsuario: nomeUsuario,
                 email: email,
-                fotoUsuario:img
             },{ 
                 where: {id:id}
             })
@@ -71,7 +59,6 @@ module.exports = {
             let atualizaUsuario = await usuarios.update ({
                 nomeUsuario: nomeUsuario,
                 email: email,
-                fotoUsuario:img,
                 password:hash,
             },{ 
                 where: {id:id}
@@ -95,4 +82,27 @@ module.exports = {
         
         res.redirect('/conta');
     },
+
+    async updateImage(req, res) {
+        const{
+            id,
+        } = req.body;
+
+        let img = "";
+        if(req.file == null){
+            let imgBanco = await usuarios.findByPk(id);
+            img = imgBanco.fotoUsuario  
+        }
+        else{
+            img = req.file.filename
+        }
+
+        let atualizaImagem = await usuarios.update ({
+            fotoUsuario:img,
+        },{ 
+            where: {id:id}
+        })
+
+        res.redirect('/conta');
+    }
 }

@@ -215,11 +215,6 @@ a, a:hover {
     color: darkorange;
 }
 
-.list-group-item.active {
-    background-color: darkorange !important; 
-    border-color: darkorange !important;
-}
-
 .badge-primary {
     background-color: darkorange;
 }
@@ -234,4 +229,8 @@ a, a:hover {
 
 .list-group{
     margin-bottom: 30px;
+}
+
+.nav-padding-top{
+    padding-top: 24px;
 }
