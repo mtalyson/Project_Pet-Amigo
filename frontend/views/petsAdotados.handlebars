@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="./css/style.css">
 
 <!-- Animais Para Adoção -->
-<div class="container-fluid">  
+<div class="container-fluid">
 
     <h2 class="titulo">Lista dos Seus Pets Adotados</h2>
 
+    {{#if pets}}
     {{#each pets}}
-    
     <div class="container-fluid">
         <div class="card margin-postado">
             <div class="row no-gutters">
@@ -43,13 +43,27 @@
                 </div>
             </div>
             <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
-                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Adotado por Você</strong></small>
+                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Adotado por
+                        Você</strong></small>
                 <a href="/petsadotados/cancelaadocao?idpet={{pets.id}}" class="btn btn-danger">Cancelar Adoção</a>
             </div>
         </div>
     </div>
-
     {{/each}}
+
+    {{else}}
+    <div>
+        <img src="/images-index/pet-adopted.png" class="img-fluid rounded mx-auto d-block img-padding"
+            alt="Responsive image" width="480" height="480">
+        <h2 class="text-center">Hum... parece que você ainda não adotou nenhum pet :(</h2>
+    </div>
+    {{/if}}
+
+    <footer>
+        <nav class="cor-navbar navbar navbar-expand-lg justify-content-center fixed-bottom ">
+            <a class="navbar-text" id="titulo-brand">© 2021 Copyright: Pet+Amigo</a>
+        </nav>
+    </footer>
 
 </div>
 </div>

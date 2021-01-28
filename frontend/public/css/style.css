@@ -208,3 +208,8 @@ body {
     background-color: darkorange;
     border-color: darkorange;
 }
+
+.img-padding {
+    padding-top: 80px;
+    margin-bottom: 40px;
+}

@@ -1,13 +1,12 @@
 <link rel="stylesheet" href="./css/style.css">
 <script type="text/javascript" src="/js/excluirPets.js"></script>
 
-<!-- Animais Para Adoção -->
+<!-- Animais Para Doação -->
 <div class="container-fluid">
-
     <h2 class="titulo">Lista dos Seus Pets Doados</h2>
-
+    {{#if pets}}
     {{#each pets}}
-     <div class="container-fluid">
+    <div class="container-fluid">
         <div class="card margin-postado">
             <div class="row no-gutters">
                 <div class="col-auto">
@@ -43,17 +42,25 @@
                 </div>
             </div>
             <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
-                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado por Você</strong></small>
+                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado por
+                        Você</strong></small>
                 <a href="/doacao/editpet/{{id}}" class="btn btn-danger">Editar</a>
                 <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir</a>
             </div>
         </div>
     </div>
-
     {{/each}}
 
+    {{else}}
+        <div>
+            <img src="/images-index/pet-donated.png" class="img-fluid rounded mx-auto d-block img-padding" alt="Responsive image" width="500" height="500">
+            <h2 class="text-center" >Que pena! Você ainda não doou nenhum pet...</h2>
+        </div>
+    {{/if}}
 
-
-    
-</div>
+    <footer>
+        <nav class="cor-navbar navbar navbar-expand-lg justify-content-center fixed-bottom ">
+            <a class="navbar-text" id="titulo-brand">© 2021 Copyright: Pet+Amigo</a>
+        </nav>
+    </footer>
 </div>

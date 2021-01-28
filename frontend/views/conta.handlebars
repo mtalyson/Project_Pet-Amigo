@@ -1,15 +1,13 @@
 <link rel="stylesheet" href="./css/style-conta.css">
 
 <div class="container-fluid">
-    <div class="col-sm-10">
+    <div>
         <h2 class="titulo-cadastro">Informações sobre a Conta</h2>
     </div>
 
     <div class="row">
         <div class="col-sm-3">
-            <!--left col-->
             {{#usuarios}}
-
             </hr><br>
             <form method="POST" action="/conta/atualizaImagem" id="formUpdate" enctype="multipart/form-data"
                 name="formUpdate">
@@ -18,28 +16,31 @@
                     <li class="list-group-item borda-item justify-content-between align-items-center">
                         <div class="text-center">
                             <img src="/images-conta/{{usuarios.fotoUsuario}}" class="img-fluid img-thumbnail"
-                                alt="avatar" height="600" width="600">
+                                alt="avatar">
                         </div>
                     </li>
-                    <li class="list-group-item list-group-item-light borda-item d-flex justify-content-between align-items-center">
-                        Atualizar Foto
+                </ul>
+                <ul class="list-group">
+                    <li
+                        class="list-group-item list-group-item-secondary borda-item d-flex justify-content-between align-items-center">
+                        <strong>Atualizar Foto</strong>
                     </li>
                     <li class="list-group-item borda-item d-flex justify-content-between align-items-center">
                         <input type="file" title=" " name="fotoUsuario" class="text-center center-block file-upload">
                     </li>
                     <li class="list-group-item borda-item d-flex justify-content-between align-items-center">
-                        <button class="btn btn-lg btn-success btn-block" type="submit"><span
-                                class="icon-save"></span>Salvar</button>
+                        <button class="btn btn-lg btn-success btn-block" type="submit"><span class="icon-save"></span>
+                            Salvar</button>
                     </li>
                 </ul>
             </form>
-
         </div>
-        <!--/col-3-->
+
+
         <div class="col-sm-9">
             <ul class="nav nav-tabs nav-padding-top">
                 <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link active">Perfil</a>
+                    <a data-toggle="tab" class="nav-link active"><strong>Perfil</strong></a>
                 </li>
             </ul>
 
@@ -73,7 +74,7 @@
 
                         <ul class="nav nav-tabs margem-menu">
                             <li class="nav-item">
-                                <a data-toggle="tab" class="nav-link active">Endereço</a>
+                                <a data-toggle="tab" class="nav-link active"><strong>Endereço</strong></a>
                             </li>
                         </ul>
 
@@ -166,12 +167,15 @@
                             </div>
                         </div>
                     </form>
-
                     {{/usuarios}}
-
                 </div>
-                <!--/tab-pane-->
             </div>
         </div>
     </div>
+
+    <footer>
+        <nav class="cor-navbar navbar navbar-expand-lg justify-content-center fixed-bottom ">
+            <a class="navbar-text" id="titulo-brand">© 2021 Copyright: Pet+Amigo</a>
+        </nav>
+    </footer>
 </div>
