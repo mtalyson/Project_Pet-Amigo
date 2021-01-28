@@ -19,7 +19,6 @@ module.exports = {
             fotoUsuario:"usernovo.png"
         })
 
-        //to pensando uma solução é essa 
         let idNovoUsuario = await usuarios.findOne({
             where:{email:email}
         })

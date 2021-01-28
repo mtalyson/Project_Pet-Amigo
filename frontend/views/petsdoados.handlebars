@@ -43,10 +43,19 @@
             </div>
             <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
                 <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado por
-                        Você</strong></small>
-                <a href="/doacao/editpet/{{id}}" class="btn btn-danger">Editar</a>
-                <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir</a>
+                        Você em: {{createdAt}}</strong></small>
+                <a href="/doacao/editpet/{{id}}" class="btn btn-warning">Editar Informações</a>
+                <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir Pet</a>
             </div>
+
+            {{!-- {{#if statusAdocao}}
+            <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
+                <p>Foi adotado por: </p>
+            </div>
+            {{else}}
+                <p>Não foi adotado</p>
+            {{/if}} --}}
+            
         </div>
     </div>
     {{/each}}
