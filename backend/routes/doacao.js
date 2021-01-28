@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const petsControllers = require('../controllers/petsControllers');
+const petsControllers = require('../../backend/controllers/petsControllers');
 const multer = require('multer');
-const uploadConfig = require('../config/upload');
+const uploadConfig = require('../../backend/config/upload');
 const upload = multer(uploadConfig);
-const {autenticado} = require('../src/autenticado');
-const {pets} = require("../app/models");
-const {categorias} = require("../app/models");
+const {autenticado} = require('../../auth/autenticado');
+const {pets} = require("../../backend/app/models");
+const {categorias} = require("../../backend/app/models");
 
 router.get("/", autenticado, async (req,res)=>{
     let categoria = await categorias.findAll();

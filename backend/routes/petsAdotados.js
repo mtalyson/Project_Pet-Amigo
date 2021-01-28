@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const petsAdotadosController = require("../controllers/petsAdotadosController")
-const {autenticado} = require('../src/autenticado');
+const petsAdotadosController = require("../../backend/controllers/petsAdotadosController")
+const {autenticado} = require('../../auth/autenticado');
 
 router.get("/", autenticado, petsAdotadosController.show);
-
 
 router.get("/cancelaadocao", autenticado, petsAdotadosController.update);
 

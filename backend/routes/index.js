@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const usersControllers = require('../controllers/usersControllers');
-const controller = require('../controllers/usuarios');
+const usersControllers = require('../../backend/controllers/usersControllers');
+const controller = require('../../backend/controllers/usuarios');
 
 router.get("/",(req,res)=>{
     res.render("index", {layout:'index.handlebars'})

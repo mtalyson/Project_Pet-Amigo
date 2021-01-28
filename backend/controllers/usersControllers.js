@@ -90,10 +90,9 @@ module.exports = {
             estado: estado,
             cep: cep
         },{ 
-            where: {idUsuario:id} //deixa 1 1 é admin queueeeeee
+            where: {idUsuario:id}
         })
         
         res.redirect('/conta');
-        //testa ai nao tem que alterar aqu itbm?... testa ai 
     },
 }

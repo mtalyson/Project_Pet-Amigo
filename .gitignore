@@ -4,9 +4,11 @@
 /node_modules
 
 # images
-public/images-adocao
-public/images-doacao
-public/images-conta
+frontend/public/images-adocao
+frontend/public/images-doacao
+
+frontend/public/images-conta/*
+!frontend/public/images-conta/usernovo.png
 
 # misc
 npm-debug.log*

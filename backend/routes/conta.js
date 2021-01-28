@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const usersControllers = require('../controllers/usersControllers');
-const {usuarios,enderecos} = require("../app/models")
-const {autenticado} = require('../src/autenticado');
+const usersControllers = require('../../backend/controllers/usersControllers');
+const {usuarios,enderecos} = require("../../backend/app/models")
+const {autenticado} = require('../../auth/autenticado');
 const multer = require('multer');
-const uploadConfig = require('../config/uploadUsuarios');
+const uploadConfig = require('../../backend/config/uploadUsuarios');
 const upload = multer(uploadConfig);
 
 router.get("/", autenticado,async (req,res)=>{
