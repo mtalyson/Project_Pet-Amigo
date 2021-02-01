@@ -4,7 +4,7 @@ const usersControllers = require('../../backend/controllers/usersControllers');
 const {usuarios,enderecos} = require("../../backend/app/models")
 const {autenticado} = require('../../auth/autenticado');
 const multer = require('multer');
-const uploadConfig = require('../../backend/config/uploadUsuarios');
+const uploadConfig = require('../../config/uploadUsuarios');
 const upload = multer(uploadConfig);
 
 router.get("/", autenticado,async (req,res)=>{

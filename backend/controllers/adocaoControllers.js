@@ -34,8 +34,13 @@ module.exports = {
     },
 
     async store(req, res){
+        let usuarios = await pets.findAll({
+            where: {id:req.query.idpet}
+        })
+
         let adotarPets = await petsadotados.create({
             idUsuario: req.user.id,
+            idUsuarioDoador: usuarios[0].get('idUsuarioDoacao'),
             idPet: req.query.idpet
         });
 

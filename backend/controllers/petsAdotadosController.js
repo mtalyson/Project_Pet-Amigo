@@ -15,9 +15,7 @@ module.exports = {
 
     async update(req, res){
 
-        let atualizaValido = await petsadotados.update ({
-            statusValido:1,
-        },{ 
+        let atualizaValido = await petsadotados.destroy ({
             where: {[Op.and]:{idUsuario:req.user.id, idPet:req.query.idpet}}
         })
 

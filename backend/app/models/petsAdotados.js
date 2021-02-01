@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const petsadotados = sequelize.define('petsadotados', {
         idUsuario: DataTypes.INTEGER,
+        idUsuarioDoador: DataTypes.INTEGER,
         idPet: DataTypes.INTEGER,
         statusValido: DataTypes.BOOLEAN,
     });

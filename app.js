@@ -5,7 +5,7 @@ const bodypaser = require("body-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
-require("./backend/config/auth")(passport);
+require("./config/auth")(passport);
 
 //Rotas da aplicação
 const app = express();

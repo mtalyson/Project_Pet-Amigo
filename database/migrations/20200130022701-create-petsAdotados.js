@@ -15,6 +15,10 @@ module.exports = {
           key: 'id'
         }
       },
+      idUsuarioDoador:{
+        allowNull: false,
+        type: DataTypes.INTEGER(),
+      },
       idPet:{
         allowNull: false,
         type: DataTypes.INTEGER(),
