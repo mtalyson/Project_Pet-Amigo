@@ -7,7 +7,7 @@ module.exports = {
     async show(req, res){
         let pet = await petsadotados.findAll({
             include:[{association:'pets'}],
-            where: {[Op.and]:{idUsuario:req.user.id, statusValido:0}}
+            where: {[Op.and]:{idUsuario:req.user.id}}
         })
 
         res.render("petsAdotados", {pets:pet})

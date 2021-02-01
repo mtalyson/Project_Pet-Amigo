@@ -13,10 +13,8 @@ module.exports = {
         //Saber quem adotou o pet
         let petadotado = await petsadotados.findAll({
             include: [{ association: 'usuarios' }, { association: 'pets' }],
-            where: {[Op.and]: {idUsuarioDoador:req.user.id, statusValido: 0 }}
+            where: {[Op.and]: {idUsuarioDoador:req.user.id}}
         })
-
-        console.log(petadotado)
 
         res.render("petsdoados", { pets:pet, petsadotados:petadotado  });
     },

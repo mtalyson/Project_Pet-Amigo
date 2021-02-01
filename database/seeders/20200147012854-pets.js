@@ -16,7 +16,6 @@ module.exports = {
     opcaoCastrado: "Não",
     fotoPet: "cachorro_4-1580441322645.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
   {
@@ -34,7 +33,6 @@ module.exports = {
     opcaoCastrado: "Não",
     fotoPet: "hamster_1.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
   {
@@ -52,7 +50,6 @@ module.exports = {
     opcaoCastrado: "Não",
     fotoPet: "cachorro_3.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
   {
@@ -70,7 +67,6 @@ module.exports = {
     opcaoCastrado: "Sim",
     fotoPet: "coelho_1.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
   {
@@ -88,7 +84,6 @@ module.exports = {
     opcaoCastrado: "Sim",
     fotoPet: "cachorro_2.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
   {
@@ -106,7 +101,6 @@ module.exports = {
     opcaoCastrado: "Sim",
     fotoPet: "gato_1.jpg",
     statusAdocao: "0",
-    petExcluido: "0",
   },
 
 ], {}),

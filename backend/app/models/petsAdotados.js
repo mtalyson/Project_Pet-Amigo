@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
         idUsuario: DataTypes.INTEGER,
         idUsuarioDoador: DataTypes.INTEGER,
         idPet: DataTypes.INTEGER,
-        statusValido: DataTypes.BOOLEAN,
     });
 
     petsadotados.associate = function(models) {

@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         opcaoCastrado: DataTypes.STRING,
         fotoPet: DataTypes.STRING,
         statusAdocao: DataTypes.BOOLEAN,
-        petExcluido: DataTypes.BOOLEAN,
     });
 
     pets.associate = function(models) {

@@ -85,11 +85,6 @@ module.exports = {
         allowNull: false,
         type: DataTypes.BOOLEAN()
       },
-
-      petExcluido: {
-        allowNull: false,
-        type: DataTypes.BOOLEAN(),
-      },
       
       createdAt: {
         allowNull: false,

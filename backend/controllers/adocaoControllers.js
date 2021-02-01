@@ -13,14 +13,14 @@ module.exports = {
         listarPets = await pets.findAll({
             offset: parseInt(req.query.pag * 12),
             limit: 12,
-            where:{[Op.and]:{statusAdocao:0, petExcluido:0}
+            where:{[Op.and]:{statusAdocao:0}
         }});
         }
         else{
         listarPets = await pets.findAll({
                 offset: parseInt(req.query.pag * 12),
                 limit: 12,
-                where:{[Op.and]:{statusAdocao:0, petExcluido:0, idCategoria:req.query.tipo}
+                where:{[Op.and]:{statusAdocao:0, idCategoria:req.query.tipo}
             }});
         }
     
