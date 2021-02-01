@@ -15,10 +15,6 @@ module.exports = {
           key: 'id'
         }
       },
-      idUsuarioDoador:{
-        allowNull: false,
-        type: DataTypes.INTEGER(),
-      },
       idPet:{
         allowNull: false,
         type: DataTypes.INTEGER(),
@@ -27,13 +23,23 @@ module.exports = {
           key: 'id'
         }
       },
-
+      idUsuarioDoador:{
+        allowNull: false,
+        type: DataTypes.INTEGER(),
+      },
+      nomeUsuarioDoador:{
+        allowNull: false,
+        type: DataTypes.STRING(),
+      },
+      emailUsuarioDoador:{
+        allowNull: false,
+        type: DataTypes.STRING(),
+      },
       createdAt: {
         allowNull: false,
         type: DataTypes.DATE,
         defaultValue: DataTypes.literal('CURRENT_TIMESTAMP()'),
       },
-
       updatedAt: {
         allowNull: false,
         type: DataTypes.DATE,

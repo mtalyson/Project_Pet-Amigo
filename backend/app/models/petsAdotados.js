@@ -2,6 +2,8 @@ module.exports = (sequelize, DataTypes) => {
     const petsadotados = sequelize.define('petsadotados', {
         idUsuario: DataTypes.INTEGER,
         idUsuarioDoador: DataTypes.INTEGER,
+        nomeUsuarioDoador: DataTypes.STRING,
+        emailUsuarioDoador: DataTypes.STRING,
         idPet: DataTypes.INTEGER,
     });
 
