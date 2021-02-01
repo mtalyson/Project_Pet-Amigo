@@ -16,6 +16,6 @@ module.exports = {
             where: {[Op.and]: {idUsuarioDoador:req.user.id}}
         })
 
-        res.render("petsdoados", { pets:pet, petsadotados:petadotado  });
+        res.render("petsdoados", { pets:pet, petsadotados:petadotado });
     },
 }

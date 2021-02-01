@@ -1,4 +1,5 @@
 const {pets} = require("../app/models");
+const {petsadotados} = require("../app/models");
 
 module.exports = {
 
@@ -66,6 +67,10 @@ module.exports = {
     },
 
     async delete(req, res){
+
+        let ExcluirPetAdotado = await petsadotados.destroy({
+            where: {idPet:req.params.id}
+        })
         
         let ExcluirPet = await pets.destroy({
             where: {id:req.params.id}

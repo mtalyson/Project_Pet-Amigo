@@ -5,65 +5,115 @@
 
     <h2 class="titulo">Lista dos Seus Pets Adotados</h2>
 
-    {{#if pets}}
-    {{#each pets}}
     <div class="container-fluid">
-        <div class="card margin-postado">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <img src="/images-adocao/{{pets.fotoPet}}" style="width: 350px; height: auto"
-                        class="img-fluid img-thumbnail" alt="">
-                </div>
-                <div class="col">
-                    <div class="card-block px-2">
-                        <div class="card-body">
-                            <h4 class="card-title">Nome: {{pets.nomePet}}</h4>
-                            <p class="card-text">{{pets.observacoes}}</p>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true">Pets Adotados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">Notificações</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                {{#if pets}}
+                {{#each pets}}
+                <div class="container-fluid">
+                    <div class="card margin-postado">
+                        <div class="row no-gutters">
+                            <div class="col-auto">
+                                <img src="/images-adocao/{{pets.fotoPet}}" style="width: 350px; height: auto"
+                                    class="img-fluid img-thumbnail" alt="">
+                            </div>
+                            <div class="col">
+                                <div class="card-block px-2">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nome: {{pets.nomePet}}</h4>
+                                        <p class="card-text">{{pets.observacoes}}</p>
 
-                            <ul class="list-group list-group-horizontal-xl">
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
-                                        {{pets.idade}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
-                                        {{pets.sexo}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
-                                        {{pets.cor}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
-                                        {{pets.raca}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
-                                        {{pets.peso}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
-                                        {{pets.tamanho}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
-                                        {{pets.opcaoVacinado}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
-                                        {{pets.opcaoCastrado}}</strong></li>
-                            </ul>
+                                        <ul class="list-group list-group-horizontal-xl">
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
+                                                    {{pets.idade}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
+                                                    {{pets.sexo}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
+                                                    {{pets.cor}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
+                                                    {{pets.raca}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
+                                                    {{pets.peso}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
+                                                    {{pets.tamanho}}</strong></li>
+                                            <li class="list-group-item list-group-item-light flex-fill">
+                                                <strong>Vacinado:
+                                                    {{pets.opcaoVacinado}}</strong>
+                                            </li>
+                                            <li class="list-group-item list-group-item-light flex-fill">
+                                                <strong>Castrado:
+                                                    {{pets.opcaoCastrado}}</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
+                            <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet
+                                    Adotado por
+                                    Você</strong></small>
+                            <a href="/petsadotados/cancelaadocao?idpet={{pets.id}}" class="btn btn-danger">Cancelar
+                                Adoção</a>
                         </div>
                     </div>
                 </div>
+                {{/each}}
+                {{else}}
+                <div>
+                    <img src="/images-index/pet-adopted.png" class="img-fluid rounded mx-auto d-block img-padding"
+                        alt="Responsive image" width="480" height="480">
+                    <h2 class="text-center">Hum... parece que você ainda não adotou nenhum pet :(</h2>
+                </div>
+                {{/if}}
             </div>
-            <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
-                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Adotado por
-                        Você</strong></small>
-                <a href="/petsadotados/cancelaadocao?idpet={{pets.id}}" class="btn btn-danger">Cancelar Adoção</a>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                {{#if pets}}
+                {{#each pets}}
+
+                <div class="card text-center margin-postado card-margin-bottom">
+                    <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-info" href="#">Detalhes da Adoção</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Confirmação</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body text-left">
+
+
+                        <h5 class="card-title">Entre em contato com <strong>{{nomeUsuarioDoador}}</strong> para
+                            prosseguir com a adoção.
+                        </h5>
+
+                        <p class="card-text">Clique no botão abaixo.</p>
+                        <a href="#" class="btn btn-success">Email: {{emailUsuarioDoador}}</a>
+
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <div>
+                    <img src="/images-index/notification-icon.png" class="img-fluid rounded mx-auto d-block img-padding"
+                        alt="Responsive image" width="380" height="380">
+                    <h2 class="text-center">Nenhuma notificação por enquanto...</h2>
+                </div>
+                {{/if}}
             </div>
         </div>
     </div>
-    {{/each}}
 
-    {{else}}
-    <div>
-        <img src="/images-index/pet-adopted.png" class="img-fluid rounded mx-auto d-block img-padding"
-            alt="Responsive image" width="480" height="480">
-        <h2 class="text-center">Hum... parece que você ainda não adotou nenhum pet :(</h2>
-    </div>
-    {{/if}}
-
-    <footer>
-        <nav class="cor-navbar navbar navbar-expand-lg justify-content-center fixed-bottom ">
-            <a class="navbar-text" id="titulo-brand">© 2021 Copyright: Pet+Amigo</a>
-        </nav>
-    </footer>
-
-</div>
 </div>

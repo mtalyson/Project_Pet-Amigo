@@ -1,6 +1,7 @@
 const {pets} = require("../app/models");
 const {petsadotados} = require("../app/models");
 const {categorias} = require("../app/models");
+const {usuarios} = require("../app/models");
 const Op = require("sequelize").Op;
 
 module.exports = {
@@ -34,13 +35,19 @@ module.exports = {
     },
 
     async store(req, res){
-        let usuarios = await pets.findAll({
+        let idUsuario = await pets.findAll({
             where: {id:req.query.idpet}
+        })
+
+        let usuario = await usuarios.findAll({
+            where: {id:idUsuario[0].get('idUsuarioDoacao')}
         })
 
         let adotarPets = await petsadotados.create({
             idUsuario: req.user.id,
-            idUsuarioDoador: usuarios[0].get('idUsuarioDoacao'),
+            idUsuarioDoador: idUsuario[0].get('idUsuarioDoacao'),
+            nomeUsuarioDoador: usuario[0].get('nomeUsuario'),
+            emailUsuarioDoador: usuario[0].get('email'),
             idPet: req.query.idpet
         });
 

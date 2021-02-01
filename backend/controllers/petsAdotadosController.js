@@ -1,16 +1,27 @@
 const {petsadotados} = require("../app/models");
+const {usuarios} = require("../app/models");
 const Op = require("sequelize").Op;
 const {pets} = require("../app/models")
+
+var Handlebars = require('handlebars');
+
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
 
 module.exports = {
 
     async show(req, res){
         let pet = await petsadotados.findAll({
-            include:[{association:'pets'}],
+            include:[{association:'pets'}, { association: 'usuarios' }],
             where: {[Op.and]:{idUsuario:req.user.id}}
         })
 
-        res.render("petsAdotados", {pets:pet})
+        let usuario = await usuarios.findAll()
+
+        console.log(usuario)
+
+        res.render("petsAdotados", {pets:pet, usuarios:usuario})
     },
 
     async update(req, res){
