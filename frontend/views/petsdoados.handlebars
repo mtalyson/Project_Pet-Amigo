@@ -5,139 +5,105 @@
 <div class="container-fluid">
     <h2 class="titulo">Lista dos Seus Pets Doados</h2>
 
-    {{#if pets}}
-    {{#each pets}}
-    {{#if this.statusAdocao}}
     <div class="container-fluid">
-        <div class="card margin-postado card-margin-bottom">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <img src="/images-adocao/{{fotoPet}}" style="width: 350px; height: auto"
-                        class="img-fluid img-thumbnail" alt="">
-                </div>
-                <div class="col">
-                    <div class="card-block px-2">
-                        <div class="card-body">
-                            <h4 class="card-title">Nome: {{nomePet}}</h4>
-                            <p class="card-text">{{observacoes}}</p>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                    aria-selected="true">Pets Doados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="profile" aria-selected="false">Notificações</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                {{#if pets}}
+                {{#each pets}}
+                <div class="card margin-postado card-margin-bottom">
+                    <div class="row no-gutters">
+                        <div class="col-auto">
+                            <img src="/images-adocao/{{fotoPet}}" style="width: 350px; height: auto"
+                                class="img-fluid img-thumbnail" alt="">
+                        </div>
+                        <div class="col">
+                            <div class="card-block px-2">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome: {{nomePet}}</h4>
+                                    <p class="card-text">{{observacoes}}</p>
 
-                            <ul class="list-group list-group-horizontal-xl">
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
-                                        {{idade}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
-                                        {{sexo}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
-                                        {{cor}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
-                                        {{raca}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
-                                        {{peso}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
-                                        {{tamanho}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
-                                        {{opcaoVacinado}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
-                                        {{opcaoCastrado}}</strong></li>
-                            </ul>
+                                    <ul class="list-group list-group-horizontal-xl">
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
+                                                {{idade}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
+                                                {{sexo}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
+                                                {{cor}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
+                                                {{raca}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
+                                                {{peso}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
+                                                {{tamanho}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
+                                                {{opcaoVacinado}}</strong></li>
+                                        <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
+                                                {{opcaoCastrado}}</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
-                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado por
-                        Você em: {{createdAt}}</strong></small>
-                <a href="/doacao/editpet/{{id}}" class="btn btn-warning">Editar Informações</a>
-                <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir Pet</a>
-            </div>
-        </div>
-
-
-        {{#each ../petsadotados}}
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-pills card-header-pills">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-info" href="#">Detalhes da Doação</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Confirmação</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body text-left">
-                <h5 class="card-title"><strong>{{usuarios.nomeUsuario}}</strong>, está interessado em adotar
-                    <strong>{{pets.nomePet}}</strong>
-                </h5>
-                <p class="card-text">Gostaria de entrar em contato? Então clique no botão abaixo.</p>
-                <a href="#" class="btn btn-success">Email: {{usuarios.email}}</a>
-            </div>
-        </div>
-        {{/each}}
-        {{else}}
-
-        <div class="card margin-postado card-margin-bottom">
-            <div class="row no-gutters">
-                <div class="col-auto">
-                    <img src="/images-adocao/{{fotoPet}}" style="width: 350px; height: auto"
-                        class="img-fluid img-thumbnail" alt="">
-                </div>
-                <div class="col">
-                    <div class="card-block px-2">
-                        <div class="card-body">
-                            <h4 class="card-title">Nome: {{nomePet}}</h4>
-                            <p class="card-text">{{observacoes}}</p>
-
-                            <ul class="list-group list-group-horizontal-xl">
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Idade:
-                                        {{idade}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Sexo:
-                                        {{sexo}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Cor:
-                                        {{cor}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Raca:
-                                        {{raca}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Peso:
-                                        {{peso}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Tamanho:
-                                        {{tamanho}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Vacinado:
-                                        {{opcaoVacinado}}</strong></li>
-                                <li class="list-group-item list-group-item-light flex-fill"><strong>Castrado:
-                                        {{opcaoCastrado}}</strong></li>
-                            </ul>
-                        </div>
+                    <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
+                        <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado
+                                por
+                                Você em: {{createdAt}}</strong></small>
+                        <a href="/doacao/editpet/{{id}}" class="btn btn-warning">Editar Informações</a>
+                        <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir Pet</a>
                     </div>
                 </div>
+                {{/each}}
+                {{else}}
+                <div>
+                    <img src="/images-index/pet-donated.png" class="img-fluid rounded mx-auto d-block img-padding"
+                        alt="Responsive image" width="500" height="500">
+                    <h2 class="text-center">Que pena! Você ainda não doou nenhum pet...</h2>
+                </div>
+                {{/if}}
             </div>
-            <div class="card-footer w-100 text-muted d-flex flex-row justify-content-between">
-                <small class="text-muted margin-postado"><span class="icon-clock-o"></span> <strong>Pet Doado por
-                        Você em: {{createdAt}}</strong></small>
-                <a href="/doacao/editpet/{{id}}" class="btn btn-warning">Editar Informações</a>
-                <a onclick="excluirpet({{id}})" style="color: white;" class="btn btn-danger">Excluir Pet</a>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                {{#if petsadotados}}
+                {{#each petsadotados}}
+                <div class="card text-center margin-postado card-margin-bottom">
+                    <div class="card-header">
+                        <ul class="nav nav-pills card-header-pills">
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-info" href="#">Detalhes da Doação</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Confirmação</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body text-left">
+                        <h5 class="card-title"><strong>{{usuarios.nomeUsuario}}</strong>, está interessado em adotar
+                            <strong>{{pets.nomePet}}</strong>
+                        </h5>
+                        <p class="card-text">Gostaria de entrar em contato? Então clique no botão abaixo.</p>
+                        <a href="#" class="btn btn-success">Email: {{usuarios.email}}</a>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <div>
+                    <img src="/images-index/notification-icon.png" class="img-fluid rounded mx-auto d-block img-padding"
+                        alt="Responsive image" width="380" height="380">
+                    <h2 class="text-center">Nenhuma notificação por enquanto...</h2>
+                </div>
+                {{/if}}
             </div>
         </div>
-
-        <div class="card text-center">
-            <div class="card-header">
-                <ul class="nav nav-pills card-header-pills">
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-info" href="#">Detalhes da Doação</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="card-body text-left">
-                <h5 class="card-title">Ainda não há ninguém disponível para adotar <strong>{{nomePet}}</strong>
-                </h5>
-            </div>
-        </div>
-
-        {{/if}}
-        {{/each}}
-        {{else}}
-        <div>
-            <img src="/images-index/pet-donated.png" class="img-fluid rounded mx-auto d-block img-padding"
-                alt="Responsive image" width="500" height="500">
-            <h2 class="text-center">Que pena! Você ainda não doou nenhum pet...</h2>
-        </div>
-        {{/if}}
     </div>
+
+
+</div>
