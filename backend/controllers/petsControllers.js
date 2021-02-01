@@ -67,9 +67,7 @@ module.exports = {
 
     async delete(req, res){
         
-        let ExcluirPet = await pets.update({
-            petExcluido: 1,
-        }, {
+        let ExcluirPet = await pets.destroy({
             where: {id:req.params.id}
         })
 
